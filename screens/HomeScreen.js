@@ -88,7 +88,7 @@ const HomeScreen = () => {
             >
                 {/* Categories */}
                 <Categories />
-                {/* Featured */}
+                {/* Featured Rows */}
                 {featuredCategories?.map((category) => {
                     return (
                         <FeaturedRow

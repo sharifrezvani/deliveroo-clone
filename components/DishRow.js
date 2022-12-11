@@ -13,6 +13,8 @@ import {
     MinusCircleIcon,
     PlusCircleIcon
 } from 'react-native-heroicons/solid'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToBasket, removeFromBasket, selectBasketItemsWithId } from '../features/basketSlice'
 
 const DishRow = ({
     id,
@@ -21,7 +23,27 @@ const DishRow = ({
     price,
     image
 }) => {
+
     const [isPressed, setIsPressed] = useState(false)
+    const items = useSelector((state) => selectBasketItemsWithId(state, id));
+    const dispatch = useDispatch();
+
+    const addItemToBasket = () => {
+        dispatch(addToBasket({
+            id,
+            name,
+            description,
+            price,
+            image
+        }))
+    }
+
+    const removeItemFromBasket = () => {
+        if (!items.length > 0) return;
+
+        dispatch(removeFromBasket({ id }))
+    }
+
     return (
         <>
             <TouchableOpacity
@@ -53,15 +75,23 @@ const DishRow = ({
             {isPressed && (
                 <View className='bg-white px-4'>
                     <View className='flex-row items-center space-x-2 pb-3'>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={removeItemFromBasket}
+                        >
                             <MinusCircleIcon
-                                // color={items.length > 0 ? "#00CCBB" : "gray"}
-                                color='#00CCBB'
+                                disabled={items.length}
+                                color={items.length > 0 ? "#00CCBB" : "gray"}
                                 size={30}
                             />
                         </TouchableOpacity>
-                        <Text>0</Text>
-                        <TouchableOpacity>
+                        <Text
+                            className='font-semibold'
+                        >
+                            {items.length}
+                        </Text>
+                        <TouchableOpacity
+                            onPress={addItemToBasket}
+                        >
                             <PlusCircleIcon
                                 // color={items.length > 0 ? "#00CCBB" : "gray"}
                                 color='#00CCBB'

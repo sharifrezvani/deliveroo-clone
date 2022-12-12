@@ -28,7 +28,7 @@ const PreparingOrderScreen = () => {
                 iterationCount={1}
                 className='text-md my-10 text-white font-bold text-center'
             >
-                Waiting for Restaurant to accept your order!
+                Waiting for the restaurant to accept your order!
             </Animatable.Text>
             <Animatable.View
                 animation='slideInUp'

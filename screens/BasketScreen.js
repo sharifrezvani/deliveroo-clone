@@ -93,19 +93,19 @@ const BasketScreen = () => {
                     <View className='flex-row justify-between'>
                         <Text className='text-gray-400'>Delivery Fee</Text>
                         <Text className='text-gray-400'>
-                            £ {(33).toFixed(2)}
+                            £ {(7).toFixed(2)}
                         </Text>
                     </View>
                     <View className='flex-row justify-between'>
                         <Text>Order Total</Text>
                         <Text className='font-extrabold'>
-                            £ {(33).toFixed(2)}
+                            £ {(basketTotal + 7).toFixed(2)}
                         </Text>
                     </View>
 
                     <TouchableOpacity
                         className='rounded-lg bg-[#00CCBB] p-4'
-                        onPress={() => navigation.navigate('PreparingOrderScreen')}
+                        onPress={() => navigation.navigate('PreparingOrder')}
                     >
                         <Text className='text-center text-white text-xl font-bold'>Place Order</Text>
                     </TouchableOpacity>

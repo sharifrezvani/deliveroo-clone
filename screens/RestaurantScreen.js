@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import
 React, {
+    useEffect,
     useLayoutEffect
 }
     from 'react'
@@ -24,9 +25,14 @@ import {
 } from 'react-native-heroicons/solid'
 import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
 import DishRow from '../components/DishRow';
+import BasketIcon from '../components/BasketIcon';
+import { useDispatch } from 'react-redux';
+import { setRestaurant } from '../features/restaurantSlice';
 
 const RestaurantScreen = () => {
     const navigation = useNavigation()
+
+    const dispatch = useDispatch();
 
     const { params: {
         id,
@@ -41,6 +47,21 @@ const RestaurantScreen = () => {
         lat
     } } = useRoute()
 
+    useEffect(() => {
+        dispatch(setRestaurant({
+            id,
+            imageUrl,
+            title,
+            rating,
+            genre,
+            address,
+            shortDescription,
+            dishes,
+            long,
+            lat
+        }))
+    }, [dispatch])
+
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false
@@ -50,6 +71,7 @@ const RestaurantScreen = () => {
     return (
         <>
             <StatusBar style='light' />
+            <BasketIcon />
             <ScrollView>
                 <View className='relative'>
                     <Image
@@ -61,7 +83,7 @@ const RestaurantScreen = () => {
                     <TouchableOpacity
                         className='absolute top-14 left-5 p-2 bg-gray-100 rounded-full'
                         onPress={() => {
-                            navigation.goBack()
+                            navigation.goBack
                         }}
                     >
                         <ArrowLeftIcon
@@ -116,7 +138,7 @@ const RestaurantScreen = () => {
                         />
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View className='p36'>
                     <Text className='px-4 pt-6 mb-3 font-bold text-xl'>
                         Menu
                     </Text>

@@ -41,7 +41,10 @@ export default function App() {
             <Stack.Screen
               name='PreparingOrder'
               component={PreparingOrderScreen}
-              options={{ presentation: 'fullScreenModal', headerShown: false }}
+              options={{
+                presentation: 'fullScreenModal',
+                headerShown: false
+              }}
             />
             <Stack.Screen
               name='Delivery'

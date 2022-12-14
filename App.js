@@ -49,7 +49,8 @@ export default function App() {
             <Stack.Screen
               name='Delivery'
               component={DeliveryScreen}
-              options={{ presentation: 'fullScreenModal', headerShown: false }}
+              options={{
+                presentation: 'fullScreenModal', headerShown: false }}
             />
           </Stack.Navigator>
         </Provider>

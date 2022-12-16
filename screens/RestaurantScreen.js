@@ -83,7 +83,7 @@ const RestaurantScreen = () => {
                     <TouchableOpacity
                         className='absolute top-14 left-5 p-2 bg-gray-100 rounded-full'
                         onPress={() => {
-                            navigation.goBack
+                            navigation.goBack()
                         }}
                     >
                         <ArrowLeftIcon

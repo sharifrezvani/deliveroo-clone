@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectRestaurant } from '../features/restaurantSlice'
 import {
     removeFromBasket,
-    selectBasketItems, selectBasketTotal
+    selectBasketItems,
+    selectBasketTotal
 } from '../features/basketSlice'
 import { XCircleIcon } from 'react-native-heroicons/solid'
 import { urlFor } from '../sanity';

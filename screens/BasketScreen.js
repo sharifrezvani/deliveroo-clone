@@ -1,5 +1,8 @@
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React, { useEffect, useMemo, useState } from 'react'
+import {
+    useMemo,
+    suseState
+} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import {
     useDispatch,

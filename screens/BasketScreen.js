@@ -1,7 +1,10 @@
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { useDispatch, useSelector } from 'react-redux';
+import {
+    useDispatch,
+    useSelector
+} from 'react-redux';
 import { selectRestaurant } from '../features/restaurantSlice'
 import {
     removeFromBasket,

@@ -1,4 +1,7 @@
-import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
+import {
+    View,
+    Text, SafeAreaView, TouchableOpacity, Image, ScrollView
+} from 'react-native'
 import {
     useMemo,
     suseState

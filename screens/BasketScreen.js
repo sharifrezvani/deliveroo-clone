@@ -1,6 +1,7 @@
 import {
     View,
-    Text, SafeAreaView, TouchableOpacity, Image, ScrollView
+    Text,
+    SafeAreaView, TouchableOpacity, Image, ScrollView
 } from 'react-native'
 import {
     useMemo,
